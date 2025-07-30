@@ -29,7 +29,7 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
     ExchangeRate-API key
 
 # Run Locally
-    git clone <your-repo-url>
+    git clone https://github.com/ralphishimwe/api_project
     cd currency-converter
     npm install
     echo "API_KEY=your_api_key_here" > .env
@@ -43,11 +43,12 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
     docker run -p 8080:8080 -e API_KEY=your_api_key ralphishimwe/currency-converter:v1
     docker push ralphishimwe/currency-converter:v1
 
-Run on Web01 & Web02
+# Run on Web01 & Web02
     docker pull ralphishimwe/currency-converter:v1
     docker run -d --name currency-app \
       --restart unless-stopped -p 8080:8080 \
       -e API_KEY=your_api_key ralphishimwe/currency-converter:v1
+      
 # Load Balancer (HAProxy)
     frontend currency_frontend
     bind *:80
@@ -59,7 +60,6 @@ Run on Web01 & Web02
         server web01 10.0.1.4:8080 check
         server web02 10.0.1.5:8080 check
 
-# Reload HAProxy:
 # Deploy HAProxy container
 docker run -d \
   --name haproxy-lb \
@@ -88,7 +88,7 @@ docker exec haproxy-lb haproxy -sf $(docker exec haproxy-lb pidof haproxy) -f /u
   GitHub repo: https://github.com/ralphishimwe/api_project
 
 # Challenges
-  One of the challenges I met, in the process of creating of the currency converter I exhuasted my api requests when I was about submit I 
+  I faced a challenge when the servers didn’t support Node.js 18+, which my app required. Originally, I planned to use Nginx and PM2 for deployment, but that approach wasn’t possible the remote machines. I had to learn Docker and Docker Hub from scratch and build the image locally instead. This allowed me to deploy the app without depending on the server’s environment or native resources. 
 
 # Future Enhancements
   1. Mobile Version
