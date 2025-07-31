@@ -57,8 +57,8 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
     backend currency_backend
         balance roundrobin
         option httpchk GET /api/codes
-        server web01 10.0.1.4:8080 check
-        server web02 10.0.1.5:8080 check
+        server web01 <web01-private-ip>:8080 check
+        server web02 <web02-private-ip>:8080 check
 
 # Deploy HAProxy container
 docker run -d \
