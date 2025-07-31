@@ -2,25 +2,22 @@
 A real-time currency converter that uses the ExchangeRate-API to help users convert over 200 currencies. Useful for travelers, businesses, and everyday users.
 
 ## Features
-    Live exchange rates (ExchangeRate-API)
-    Supports 200+ currencies    
-    Clean and responsive UI    
-    Converts any amount between selected currencies    
-    Robust error handling    
-    Deployed with load balancing (Web01, Web02, LB01)
+    * Live exchange rates (ExchangeRate-API)
+    * Supports 200+ currencies    
+    * Converts any amount between selected currencies
 
 ## Tech Stack
-    Frontend: HTML, CSS, JavaScript (ES6)    
-    Backend: Node.js + Express.js    
-    API: ExchangeRate-API    
-    Containerization: Docker    
-    Load Balancing: HAProxy    
-    Deployment: Azure VMs
+    * Frontend: HTML, CSS, JavaScript (ES6)    
+    * Backend: Node.js + Express.js    
+    * API: ExchangeRate-API    
+    * Containerization: Docker    
+    * Load Balancing: HAProxy    
+    * Deployment: Azure VMs
 
 ## Docker Info
-    Repo: docker.io/ralphishimwe/currency-converter    
-    Tags: v2, latest    
-    URL: [Docker Hub Link](https://hub.docker.com/r/ralphishimwe/currency-converter)
+    * Repo: docker.io/ralphishimwe/currency-converter    
+    * Tags: v2, latest    
+    * URL: [Docker Hub Link](https://hub.docker.com/r/ralphishimwe/currency-converter)
 
 ## Local Setup
     
@@ -82,6 +79,9 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
 
   curl http://4.231.106.46/api/codes
   curl http://4.231.106.46/api/rates/USD
+
+## API Attribution
+This application uses the [ExchangeRate-API](https://exchangerate-api.com/) by Jonathan Mearns. Special thanks for providing reliable, free currency exchange rate data.
 
 ## Challenges
   I faced a challenge when the servers didn’t support Node.js 18+, which my app required. Originally, I planned to use Nginx and PM2 for deployment, but that approach wasn’t possible the remote machines. I had to learn Docker and Docker Hub from scratch and build the image locally instead. This allowed me to deploy the app without depending on the server’s environment or native resources. 
