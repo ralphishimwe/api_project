@@ -61,15 +61,15 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
         server web02 <web02-private-ip>:8080 check
 
 # Deploy HAProxy container
-docker run -d \
-  --name haproxy-lb \
-  --restart unless-stopped \
-  -p 80:80 \
-  -v /etc/haproxy:/usr/local/etc/haproxy:ro \
-  haproxy:2.4
+    docker run -d \
+      --name haproxy-lb \
+      --restart unless-stopped \
+      -p 80:80 \
+      -v /etc/haproxy:/usr/local/etc/haproxy:ro \
+      haproxy:2.4
 
 # Reload HAProxy configuration
-docker exec haproxy-lb haproxy -sf $(docker exec haproxy-lb pidof haproxy) -f /usr/local/etc/haproxy/haproxy.cfg
+    docker exec haproxy-lb haproxy -sf $(docker exec haproxy-lb pidof haproxy) -f /usr/local/etc/haproxy/haproxy.cfg
 
 
 # Testing Load Balancing
@@ -95,8 +95,14 @@ docker exec haproxy-lb haproxy -sf $(docker exec haproxy-lb pidof haproxy) -f /u
   2. Historical Charts
 
 
-Website 🔗:
-Demo video 🔗: ############
-Contact & Support Email:r.ishimwe3@alustudent.com
+
+# Website 
+http://www.getralphishy.tech
+
+# Demo video 
+############
+
+# Contact & Support Email: r.ishimwe3@alustudent.com
+
 © 2025 Ralph Ishimwe Yvan. All rights reserved
 
