@@ -19,7 +19,7 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
 
 ## Docker Info
     Repo: docker.io/ralphishimwe/currency-converter    
-    Tags: v1, latest    
+    Tags: v2, latest    
     URL: [Docker Hub Link](https://hub.docker.com/r/ralphishimwe/currency-converter)
 
 ## Local Setup
@@ -39,15 +39,15 @@ A real-time currency converter that uses the ExchangeRate-API to help users conv
 ## Docker Deployment
 
 ### Build & Push
-    docker build -t ralphishimwe/currency-converter:v1 .
-    docker run -p 8080:8080 -e API_KEY=your_api_key ralphishimwe/currency-converter:v1
-    docker push ralphishimwe/currency-converter:v1
+    docker build -t ralphishimwe/currency-converter:v2 .
+    docker run -p 8080:8080 -e API_KEY=your_api_key ralphishimwe/currency-converter:v2
+    docker push ralphishimwe/currency-converter:v2
 
 ### Run on Web01 & Web02
-    docker pull ralphishimwe/currency-converter:v1
+    docker pull ralphishimwe/currency-converter:v2
     docker run -d --name currency-app \
       --restart unless-stopped -p 8080:8080 \
-      -e API_KEY=your_api_key ralphishimwe/currency-converter:v1
+      -e API_KEY=your_api_key ralphishimwe/currency-converter:v2
       
 ### Load Balancer (HAProxy)
     frontend currency_frontend
